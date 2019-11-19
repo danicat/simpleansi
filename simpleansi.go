@@ -15,3 +15,10 @@ func ClearScreen() {
 func MoveCursor(row, col int) {
 	fmt.Printf("\x1b[%d;%df", row+1, col+1)
 }
+
+// PrintWithBlueBackground prints the given text using the blue background ANSI escape sequence.
+//
+// After printing it issues a reset escape sequence.
+func PrintWithBlueBackground(text string) {
+	fmt.Print("\x1b[44m" + text + "\x1b[0m")
+}
