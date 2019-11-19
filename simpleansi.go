@@ -15,3 +15,8 @@ func ClearScreen() {
 func MoveCursor(row, col int) {
 	fmt.Printf("\x1b[%d;%df", row+1, col+1)
 }
+
+// WithBlueBackground wraps the given text with blue background and reset escape sequences.
+func WithBlueBackground(text string) string {
+	return "\x1b[44m" + text + "\x1b[0m"
+}
